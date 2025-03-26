@@ -1,7 +1,35 @@
----
-layout: layout.liquid
-title: 11ty Boilerplate
----
 
-<h1>Yet Another 11ty <strong>Boilerplate</strong></h1>
-<img alt="pine" src="/images/pine.png" width="50" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alien Name Generator</title>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.2/dist/cdn.min.js" defer></script>
+  <link rel="stylesheet" href="/styles/screen.css">
+</head>
+<body>
+  <div class="content-wrapper">
+    
+<div class="container">
+  <h1>Alien Name Generator</h1>
+
+  <div x-data="{ names: [
+    'Zorath', 'Xenon', 'Vorga', 'Kryx', 'Zyxor', 'Quasari', 'Gortan', 'Nektra', 'Vraxia', 
+    'Thryggon', 'Goxar', 'Xeltra', 'Omaron', 'Yvok', 'Korrith', 'Lygor', 'Zenthra', 'Tzaz', 
+    'Zogor', 'Rylix'], randomName: '' }" class="generator">
+    <button @click="randomName = names[Math.floor(Math.random() * names.length)]" class="btn">
+      Click to generate Alien Name
+    </button>
+
+    <h2 x-text="randomName" class="random-name"></h2>
+  </div>
+</div>
+
+<div class="alien alien-top-left"></div>
+<div class="alien alien-top-right"></div>
+<div class="alien alien-bottom-left"></div>
+<div class="alien alien-bottom-right"></div>
+  </div>
+</body>
+</html>
